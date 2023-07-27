@@ -1,0 +1,13 @@
+config:                           # 
+  target: 'http://localhost:3001' # 
+  phases:                         # 
+    - duration: 10                # KAME HAME HA DE CODIGOOO
+      arrivalRate: 1              # 
+                                  #             　　　　　　　　　　　　　ｵ～ﾏ～ｴ～… 
+scenarios:                        # 　　　　　＿ヽ|＼∧,/|　　　　　＿ヽ|＼∧,/| 　ﾀﾞｹーッ!! 
+  - name: 'Find all contacts'     # 　 ＼　　＼丶　ヘヘ, |/|　　　＼丶　ヘヘ, |/|
+    flow:                         # 　　　＼　∧,,　|/|/ヽ ,/　　　　　＼ゝ|/|/ヽ ,/　　＼　|　/　／　ｱｰﾋｬﾋｬﾋｬﾋｬﾋｬﾋｬﾋｬッ!!!!!!!!!!!
+      - get:                      # 　　　 ゞ　⌒ヽ／　ﾟ∀）　　　　　　 　ゞ＿ﾟ∀）　　ゞ　⌒ヾ∠＿＿＿＿＿＿＿＿_-ニ￣￣ ヽ
+          url: '/contacts'        # 　　　<（ 　 　 >＞ ⊂ ）　　　　　　（ ＿￣つ⊃（　 　 　=-　　　　　　　　　　　　　　　　　　ﾟ∀）
+          expect:                 # 　　　 ／/,, ノ＼／>　>　　　　　／ ／>" >　　／/_　 く￣￣￣￣￣￣￣￣￣ --=＿＿__ ノ
+            - statusCode: 200     # 　　／ ,/　| |＿）＼＿_）　　　 （＿ノ　（＿_）／　/ ∨Ｎ　＼
