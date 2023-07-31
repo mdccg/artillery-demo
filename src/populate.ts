@@ -34,4 +34,4 @@ const saveContacts = async () => {
   }
 }
 
-saveContacts().then(() => process.exit(1))
+saveContacts().then(() => process.exit(0))
