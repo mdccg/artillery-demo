@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { ContactDAO } from '../daos/ContactDAO'
+import Params, { getParams } from './../types/Params';
 
 export class ContactController {
   private _dao: ContactDAO
@@ -8,8 +9,17 @@ export class ContactController {
     this._dao = new ContactDAO()
   }
 
-  async findAll(req: Request, res: Response) {
-    const contacts = await this._dao.findAll()
-    return res.status(200).json({ contacts })
+  async findByName(req: Request, res: Response) {
+    const { name } = req.params;
+
+    if (!name) {
+      return res.status(400).json({ errorMessages: ['Nome pendente'] });
+    }
+
+    const params: Params = getParams(req.query);
+    const { page, perPage } = params;
+    const contacts = await this._dao.findByName(name, page, perPage);
+
+    return res.status(200).json({ contacts });
   }
 }
