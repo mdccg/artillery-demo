@@ -5,7 +5,7 @@ export const connectToMongoDB = async () => {
 }
 
 connection.on('connecting', () =>
-  console.log('Opening connection to database...')
+  console.log(`[${process.pid}]: Opening connection to database...`)
 )
 
 connection.on('connected', () =>
@@ -13,7 +13,7 @@ connection.on('connected', () =>
 )
 
 connection.on('disconnecting', () =>
-  console.log('Closing connection to database...')
+  console.log(`[${process.pid}]: Closing connection to database...`)
 )
 
 connection.on('disconnected', () =>

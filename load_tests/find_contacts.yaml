@@ -2,14 +2,14 @@ config:
   target: 'http://localhost:3001'
   phases:
     - duration: 10
-      arrivalRate: 20
+      arrivalRate: 100
   variables:
     name: 'Silva'
     page: 1
-    perPage: 100
+    perPage: 500
 
 scenarios:
-  - name: 'Find first fifty Silvas from agenda'
+  - name: 'Find five-hundredth Silvas from agenda'
     flow:
       - get:
           url: '/contacts/name/{{name}}?page={{page}}&perPage={{perPage}}'
