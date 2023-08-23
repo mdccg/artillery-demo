@@ -11,15 +11,11 @@ export class ContactController {
 
   async findByName(req: Request, res: Response) {
     const { name } = req.params;
-
-    if (!name) {
-      return res.status(400).json({ errorMessages: ['Nome pendente'] });
-    }
-
+    if (!name) return res.status(400).json({ errorMessages: ['Nome pendente'] });
     const params: Params = getParams(req.query);
     const { page, perPage } = params;
+    const cacheKey = `byName_${name.toLowerCase().trim()}_${page}_${perPage}`;
     const contacts = await this._dao.findByName(name, page, perPage);
-
     return res.status(200).json({ contacts });
   }
 }
