@@ -1,5 +1,6 @@
-import { Request, Response } from 'express'
-import { ContactDAO } from '../daos/ContactDAO'
+import { Request, Response } from 'express';
+import { redisClient } from './../configs/cache';
+import { ContactDAO } from './../daos/ContactDAO';
 import Params, { getParams } from './../types/Params';
 
 export class ContactController {
@@ -15,7 +16,10 @@ export class ContactController {
     const params: Params = getParams(req.query);
     const { page, perPage } = params;
     const cacheKey = `byName_${name.toLowerCase().trim()}_${page}_${perPage}`;
+    const cachedContacts = await redisClient.get(cacheKey);
+    if (cachedContacts) return res.json({ contacts: JSON.parse(cachedContacts) });
     const contacts = await this._dao.findByName(name, page, perPage);
+    redisClient.set(cacheKey, JSON.stringify(contacts), { EX: Number(process.env.CACHE_LIFE_TIME) });
     return res.status(200).json({ contacts });
   }
 }
