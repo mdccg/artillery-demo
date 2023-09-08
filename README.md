@@ -39,7 +39,7 @@ scenarios:
 
 Este foi o primeiro repositório de código apresentado no [Curso Superior de TSI do IFMS](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) como requisito para obtenção da nota parcial das atividades da unidade curricular Web Services. É digno de nota que nesta unidade curricular, teremos a oportunidade de aprender sobre a otimização de APIs e reforçar boas convenções de desenvolvimento.
 
-| [Próximo repositório &rarr;](#) |
+| [Próximo repositório &rarr;](https://github.com/mdccg/blog-api) |
 |-|
 
 ## Pilha de tecnologia
@@ -52,6 +52,7 @@ Este foi o primeiro repositório de código apresentado no [Curso Superior de TS
 | Mapeamento Objeto-Documento | [Mongoose](https://mongoosejs.com/) |
 | Virtualização do banco de dados | [Docker](https://docker.io/) |
 | Ferramenta de teste de carga | [Artillery](https://www.artillery.io/) |
+| Armazenamento de estrutura de dados em memória | [Redis](https://redis.io/) |
 
 <details>
   <summary>
